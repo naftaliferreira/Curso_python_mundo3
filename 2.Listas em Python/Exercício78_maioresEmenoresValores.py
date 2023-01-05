@@ -2,15 +2,30 @@
 No final, mostre qual foi o maior e menor valor digitado e as suas respectivas posições na lista. """
 
 # Adicionando itens a lista
-lista = []
-for i in range(0, 5):
-    lista.append(int(input('Digite um valor: ')))
+listanum = []
+maior = 0
+menor = 0
 
-# Maiores e menores valores 
-menor = min(lista)
-maior = max(lista)
+for c in range(0, 5):
+    listanum.append(int(input(f'Digite um valor para a posição {c}: ')))
+    if c == 0:
+        maior = menor = listanum[c]
+    else:
+        if listanum[c] > maior:
+            maior = listanum[c]
+        if listanum[c] < menor:
+            menor = listanum[c]
 
-# Exibição de resultados
-print(f'O menor valor inserido está na posção {lista.index(menor)} o número {menor}')
-print(f'e o maior valor inserido está na posição {lista.index(maior)} é o número {maior}')
+print('*' * 35)
+print(f'Você digitou os valores {listanum}')
+print(f'O menor valor digitado foi {menor} nas posições ', end='')
+for i, v in enumerate(listanum):
+    if v == menor:
+        print(f'{i}...', end='')
+print()
+print(f'O maior valor digitado foi {maior} nas posições ', end='')
+for i, v in enumerate(listanum):
+    if v == maior:
+        print(f'{i} ...', end='')
+print()
 
