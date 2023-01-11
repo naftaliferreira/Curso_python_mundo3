@@ -23,7 +23,9 @@ while True:
     dados_grupo.append(dados_indiv[:])
     dados_indiv.clear()
     tot += 1
+   
     
+
 # Condição para continuar
     resp = str(input('Quer continuar? '))
     if resp in 'Nn':
