@@ -8,44 +8,42 @@ b) Uma listagem com as pessoas mais pesadas.
 c) Uma listagem com as pessoas mais leves """
 
 # lista vazia
-dados_grupo = list()
-dados_indiv = list()
-
-# contagem de usuários cadastrados
-tot = 0
+dados_temp = []
+dados_princ = []
 maior = menor = 0
 
+
 # entrada de dados em loop
-while True:
-    dados_indiv.append(str(input('Digite o nome: ')))
-    dados_indiv.append(int(input('Digite o seu peso: ')))
-# filtro de maior e menor peso
-    if len(dados_indiv) > maior:
-        maior = dados_indiv[1]
-    if dados_indiv[1] > maior:
-        maior = dados_indiv[1]
-    if dados_indiv[1] < menor:
-        menor = dados_indiv[1]
-
-# Copiando os dados da lista individual para a lista grupo
-    dados_grupo.append(dados_indiv[:])   
-    dados_indiv.clear()
-    tot += 1
-   
+while True: 
+    dados_temp.append(str(input('Digite aqui o seu nome: ')))
+    dados_temp.append(int(input('Digite aqui o seu peso: ')))
+    if len(dados_princ) == 0:
+        maior = menor = dados_temp[1]
+    else:
+        if dados_temp[1] > maior:
+            maior = dados_temp[1]
+        if dados_temp[1] < menor:
+            menor = dados_temp[1]
     
-
+    dados_princ.append(dados_temp[:])
+    dados_temp.clear()
 # Condição para continuar
-    resp = str(input('Quer continuar? '))
+    resp = str(input('Quer continuar? [S/N] '))
     if resp in 'Nn':
-            break    
-
-# Total de pessoas cadastradas
-print(f'Foram cadastradas um total de {tot} pessoas.')
-
-# maior peso
-print(f'O maior peso cadastrado é {maior}kg')
-
-# menor peso
-print(f'O menor peso cadastrado é {menor}kg')
+        break
 
 
+print(f'As pessoas cadastradas foram {dados_princ}')
+print(f'Ao todo foram cadastradas {len(dados_princ)} pessoas')
+
+print(f'O maior peso foi de {maior}kg', end='')
+for p in dados_princ:
+    if p[1] == maior:
+        print(f' O usuário com maior peso é [{p[0]}]')
+print()
+
+print(f'O menor peso foi de {menor}', end='')
+for o in dados_princ:
+    if p[1] == menor:
+        print(f'O usuário com menor peso é [{p[0]}]')
+print()
