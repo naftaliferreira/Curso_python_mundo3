@@ -12,11 +12,10 @@ dados_temp = []
 dados_princ = []
 maior = menor = 0
 
-
 # entrada de dados em loop
 while True: 
     dados_temp.append(str(input('Digite aqui o seu nome: ')))
-    dados_temp.append(int(input('Digite aqui o seu peso: ')))
+    dados_temp.append(float(input('Digite aqui o seu peso: ')))
     if len(dados_princ) == 0:
         maior = menor = dados_temp[1]
     else:
@@ -32,18 +31,16 @@ while True:
     if resp in 'Nn':
         break
 
+print('=*=' * 20)
 
-print(f'As pessoas cadastradas foram {dados_princ}')
-print(f'Ao todo foram cadastradas {len(dados_princ)} pessoas')
-
-print(f'O maior peso foi de {maior}kg', end='')
+print(f'Ao todo foram cadastrados {len(dados_princ)} pessoas')
+print(f'O maior peso foi de {maior}kg, nome: ', end='')
 for p in dados_princ:
     if p[1] == maior:
-        print(f' O usuário com maior peso é [{p[0]}]')
+        print(f'{p[0]}')
 print()
-
-print(f'O menor peso foi de {menor}', end='')
-for o in dados_princ:
+print(f'O menor peso cadastrado foi {menor}kg, nome: ', end='')
+for p in dados_princ:
     if p[1] == menor:
-        print(f'O usuário com menor peso é [{p[0]}]')
+        print(f'{p[0]}')
 print()
