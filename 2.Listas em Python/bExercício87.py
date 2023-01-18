@@ -24,3 +24,14 @@ for l in range(0 ,3):
     print()
 print('-=-' * 30)
 print(f'A soma dos valores pares é {sompar}')
+# Laço for apenas para a linha, pois o elemento da terceira coluna será fixado para somar. 
+for l in range(0, 3):
+    somterc += matriz[l][2]
+# A soma dos valores da terceira linha
+print(f'A soma dos números da terceira coluna é {somterc}.')
+
+# O maior valor da segunda linha
+for c in range(0, 3):
+    somseg += matriz[1][c]
+
+print(f'A soma dos elementos da segunda linha são: {somseg}.')
