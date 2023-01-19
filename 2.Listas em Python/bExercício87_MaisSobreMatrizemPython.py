@@ -9,7 +9,7 @@
 
 matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-sompar = somterc = somseg = 0
+sompar = somterc = maior = 0
 
 for l in range(0, 3):  # Laço para linha
     for c in range(0, 3): # Laço para coluna
@@ -32,6 +32,10 @@ print(f'A soma dos números da terceira coluna é {somterc}.')
 
 # O maior valor da segunda linha
 for c in range(0, 3):
-    somseg += matriz[1][c]
+    if c == 0:
+        maior = matriz[1][c]
+    elif matriz[1][c] > maior:
+        maior = matriz[1][c]
 
-print(f'A soma dos elementos da segunda linha são: {somseg}.')
+
+print(f'O maior valor da segunda linha são: {maior}.')
