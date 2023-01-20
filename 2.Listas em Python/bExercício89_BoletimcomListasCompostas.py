@@ -21,4 +21,13 @@ while True:
         dados_turma.append(dados_ind[:])
         dados_ind.clear()
 
-print(f'Os dados inseridos são: {dados_turma}')
+
+
+print('₪' * 50)
+print('₪' * 11, 'BOLETIM DE NOTAS ESCOLARES', '₪' * 11)
+print('₪' * 50)
+print('₪' * 12, 'Notas e média do período', '₪' * 12)
+
+for i in enumerate:
+    print(dados_turma[1])
+
