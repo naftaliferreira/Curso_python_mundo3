@@ -24,6 +24,13 @@ while True:
 print('₪' * 50)
 print('₪' * 11, 'Relatório de notas da turma', '₪' * 11)
 print('₪' * 50)
+print('       NOME', '    NOTA 1', '    NOTA 2', '     MÉDIA')
+
+for i, in range(turma):
+
+    print(f'{i}º - {turma[0]} |   {turma[1]}   |   {turma[2]}   |   {turma[3]} ')
+
+
 
 
 
