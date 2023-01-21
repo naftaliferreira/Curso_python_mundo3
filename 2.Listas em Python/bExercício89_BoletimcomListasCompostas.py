@@ -1,33 +1,30 @@
 """ Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta. No final, 
 mostre um boletim contendo a média de cada um e permita que o usuário possa mostrar as notas de cada aluno individualmente."""
 
-dados_ind = list()
-dados_turma = list()
+turma = list()
+aluno = list()
 
 while True:
-    nome = str(input('Digite o nome do aluno: '))
-    dados_ind.append(nome)
-    pnota = float(input('Digite a primeira nota: '))
-    dados_ind.append(pnota)
-    snota = float(input('Digite a segunda nota: '))
-    dados_ind.append(snota)
-
-    resp = str(input('Quer continuar? [S/N] '))
-    if resp in 'Nn':
-        dados_turma.append(dados_ind[:])
-        dados_ind.clear()
+    nome = str(input('Nome do aluno: '))
+    aluno.append(nome)
+    nota1 = float(input('Insira a primeira nota: '))
+    aluno.append(nota1)
+    nota2 = float(input('Digite a segunda nota: '))
+    aluno.append(nota2)
+    media = (nota1 + nota2) / 2
+    aluno.append(media)
+    turma.append(aluno[:])
+    aluno.clear()
+    resposta = str(input('Quer adicionar outro aluno? [S/N] '))
+    if resposta in 'Nn':
         break
-    if resp in 'Ss':
-        dados_turma.append(dados_ind[:])
-        dados_ind.clear()
 
 
 
 print('₪' * 50)
-print('₪' * 11, 'BOLETIM DE NOTAS ESCOLARES', '₪' * 11)
+print('₪' * 11, 'Relatório de notas da turma', '₪' * 11)
 print('₪' * 50)
-print('₪' * 12, 'Notas e média do período', '₪' * 12)
 
-for i in enumerate:
-    print(dados_turma[1])
+
+
 
