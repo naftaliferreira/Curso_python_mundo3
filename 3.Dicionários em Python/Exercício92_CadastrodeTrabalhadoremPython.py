@@ -23,11 +23,13 @@ dados_trabalhador['ctps'] = int(input('Numero da carteira de trabalho: (0 caso n
 if dados_trabalhador['ctps'] != 0:
     dados_trabalhador['ano contratação'] = int(input('Ano da contratação: '))
     dados_trabalhador['salário'] = float(input('Salário: '))
+    dados_trabalhador['aposentadoria'] = dados_trabalhador['idade'] + ((dados_trabalhador['ano contratação'] + 35) - datetime.now().year)
     print('Cadastro concluído!')
 else:
     print('Cadastro concluído!')
      
+# Output
 print('-=' * 30)
 
-# Output
-
+for k, v in dados_trabalhador.items():
+    print(f' - {k}:  {v}')
