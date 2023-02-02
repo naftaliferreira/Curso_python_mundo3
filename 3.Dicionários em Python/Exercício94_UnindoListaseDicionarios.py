@@ -15,6 +15,8 @@ d) Uma lista com todas as pessoas com idade acima da média."""
 galera = list()
 pessoa = dict()
 tot = 0
+idade_tot = 0
+
 # Input 
 while True:
     pessoa.clear()
@@ -26,6 +28,7 @@ while True:
             break
         print('ERRO! Digite apenas M ou F.')
     pessoa['idade'] = int(input('Idade: '))
+    idade_tot += pessoa['idade']
     galera.append(pessoa.copy())
     
     while True:
@@ -39,13 +42,29 @@ while True:
 print('-=' * 30)
 
 # Quantas pessoas foram cadastradas?
-print(f'Foram cadastradas {tot} pessoas.')
+if tot == 1:
+    print(f'Foi cadastrada {tot} pessoa.')
+else:
+     print(f'Foram cadastradas {tot} pessoas.')
 
 # A média de idade do grupo
-
-
+media = int(idade_tot/tot)
+print(f' A média de todas as idades é de {media}')
+print('          ')
 # Uma lista com todas as mulheres 
-
-
+print('As mulheres cadastradas foram: ')
+for p in galera:
+    if p['sexo'] in 'Ff':
+        print('          ')
+        print(f'{p["nome"]};')
+print()
 # Uma lista com todas as pessoas com idade acima da média.
+print('As mulheres com idade acima da média do grupo são: ')
+for p in galera:
+   if p['idade'] >= media:
+       print('          ')
+       for k, v in p.items():
+        print(f'{k} : {v};')
+print()
+print('Fim do programa')
 
