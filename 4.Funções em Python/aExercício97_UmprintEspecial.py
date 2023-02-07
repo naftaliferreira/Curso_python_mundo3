@@ -9,3 +9,13 @@ saída:
 olá mundo
 ---------
 """
+def escreva(msg):
+    print('-' * 10)
+    print('Hello World')
+    print('-' * 10)
+
+
+# programa principal
+escreva('Hello world')
+
+
