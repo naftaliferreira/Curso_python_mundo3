@@ -9,3 +9,17 @@ b) De 10 a 0, de 2 em 2
 c) Uma contagem personalizada.
 
 """
+# Função Contador comum 
+def contador(i, f, p):
+    print(f'Contagem de {i} até {f} em {p}')
+
+    cont = i
+    while cont <= f:
+        print(f'{cont}', end=' ')
+        cont += p
+    print('Fim')
+
+contador(1, 10, 1)
+
+
+
