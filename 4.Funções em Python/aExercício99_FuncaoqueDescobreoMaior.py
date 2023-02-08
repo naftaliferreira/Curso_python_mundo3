@@ -2,3 +2,15 @@
 
 Seu programa tem que analisar todos os valores e dizer qual é o maior. 
 """
+
+
+
+
+
+
+
+nums = list()
+
+num = int(input('Digite um número: '))
+nums.append(num[:])
+
