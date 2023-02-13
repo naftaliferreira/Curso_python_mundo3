@@ -2,7 +2,7 @@
 retornando um valor literal indicando se uma pessoa tem voto NEGADO, OPCIONAL e OBRIGATÓRIO nas eleições. """
 
 # Bibliotecas
-from datetime import datetime
+from datetime import date
 
 
 
@@ -23,23 +23,21 @@ def voto(ano):
     Para a utilização desta função importe a função datetime da biblioteca datetime. 
     
     """
-    ano_atual = datetime.now().year
-    idade = ano_atual - ano
+    atual = date.today().year
+    idade = atual - ano
 
-    if idade <= 15:  # menor de 15 anos
-        print('VOTO NEGADO!')
-    elif idade > 17 and idade < 65:  # entre 18 e 65 anos
-        print('OBRIGATÓRIO')
-    elif idade > 15 and idade < 18: # 16 e 17 anos
-        print('OPCIONAL')
+    if idade < 16:  
+        return f'Com {idade} anos: Não vota.'
+    elif 16 <= idade < 18 or idade > 65:
+        return f'Com {idade} anos: Voto opcional'
     else:
-        print('OPCIONAL')  # mais de 65 anos
+        return f'Com {idade} anos: Voto obrigatório'
 
 # Programa principal
 
 ano = int(input('Digite o ano de nascimento: '))
 
-voto(ano)
+print(voto(ano))
 
 
 
