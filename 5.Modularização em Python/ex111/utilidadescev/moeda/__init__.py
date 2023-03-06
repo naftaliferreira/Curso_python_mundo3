@@ -1,6 +1,7 @@
+
 # Funções moeda
 
-# => Aumento
+# => Aumento 
 
 def aumentar(preco = 0, taxa = 0, formato = False):
     result =  preco + (preco * taxa / 100)
